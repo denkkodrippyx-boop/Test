@@ -1,0 +1,43 @@
+[
+  {
+    "name": "game_session",
+    "fields": [
+      {
+        "name": "BossName",
+        "type": "text",
+        "description": "Name of the boss that was fought",
+        "options": null
+      },
+      {
+        "name": "WinnerUsername",
+        "type": "text",
+        "description": "Username of the player who dealt the final blow",
+        "options": null
+      },
+      {
+        "name": "TotalDamageDealt",
+        "type": "number",
+        "description": "Total damage dealt to defeat the boss",
+        "options": null
+      },
+      {
+        "name": "SessionDuration",
+        "type": "number",
+        "description": "Duration of the game session in seconds",
+        "options": null
+      },
+      {
+        "name": "TopPlayers",
+        "type": "text",
+        "description": "JSON string of top 3 players and their damage",
+        "options": null
+      },
+      {
+        "name": "CompletedAt",
+        "type": "datetime",
+        "description": "Timestamp when the boss was defeated",
+        "options": null
+      }
+    ]
+  }
+]

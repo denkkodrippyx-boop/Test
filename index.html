@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TikTok Boss Fight - Live Stream Game</title>
+    <meta name="description" content="Interactive boss fight game for TikTok live streams where gifts deal damage">
+    <meta name="keywords" content="TikTok, live stream, boss fight, interactive game, gifts">
+    
+    <meta property="og:title" content="TikTok Boss Fight Game">
+    <meta property="og:description" content="Interactive boss fight game for TikTok live streams">
+    
+    <meta name="twitter:title" content="TikTok Boss Fight Game">
+    <meta name="twitter:description" content="Interactive boss fight game for TikTok live streams">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <style type="text/tailwindcss">
+    @layer theme {
+        :root {
+            --primary-color: #fe2c55;
+            --secondary-color: #25f4ee;
+            --background-dark: #0f0f0f;
+            --background-card: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --success-color: #00ff88;
+            --warning-color: #ffb800;
+        }
+    }
+
+    @layer base {
+        body {
+            margin: 0;
+            padding: 0;
+            background: var(--background-dark);
+            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    }
+
+    @layer components {
+        .boss-container {
+            @apply relative w-full h-64 flex items-center justify-center mb-6;
+        }
+        
+        .health-bar-container {
+            @apply w-full bg-gray-800 rounded-full h-8 overflow-hidden relative;
+        }
+        
+        .health-bar {
+            @apply h-full transition-all duration-500 ease-out;
+            background: linear-gradient(90deg, #fe2c55, #ff6b9d);
+        }
+        
+        .gift-item {
+            @apply bg-[var(--background-card)] rounded-lg p-4 cursor-pointer transition-all hover:scale-105 hover:shadow-lg;
+            border: 2px solid transparent;
+        }
+        
+        .gift-item:hover {
+            border-color: var(--primary-color);
+        }
+        
+        .damage-text {
+            @apply absolute text-4xl font-bold animate-bounce;
+            color: var(--warning-color);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+    }
+
+    @layer utilities {
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    }
+    </style>
+
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel" src="components/BossCharacter.js"></script>
+    <script type="text/babel" src="components/HealthBar.js"></script>
+    <script type="text/babel" src="components/GiftPanel.js"></script>
+    <script type="text/babel" src="components/DamageEffect.js"></script>
+    <script type="text/babel" src="components/LeaderBoard.js"></script>
+    <script type="text/babel" src="components/SessionHistory.js"></script>
+    <script type="text/babel" src="utils/gameLogic.js"></script>
+    <script type="text/babel" src="app.js"></script>
+</body>
+</html>
